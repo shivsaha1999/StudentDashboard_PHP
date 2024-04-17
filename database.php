@@ -1,23 +1,16 @@
 <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$db_name = "student_db";
 
-$HOSTNAME="localhost";
-$USERNAME="aroshi19";
-$PASSWORD="aroshi_2024";
-$DATABASE="student_db";
-
-$con=mysqli_connect($HOSTNAME,$USERNAME,$PASSWORD,$DATABASE);
+$con=mysqli_connect($servername, $username, $password, $db_name);
 
 // ERROR HANDLING
-if($con)
+if($con->connect_error)
 {
-    echo 'connection successful';
+    die("Connection failed".$con->connect_error);
 
 }
-else
-{
-    die(mysqli_connect($con));
-}
-
-
-
+echo"Connection successful";
 ?>
